@@ -1,16 +1,44 @@
 <!DOCTYPE html>
-<html lang="it" dir="ltr">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="utf-8">
-    <title></title>
+  <meta charset="utf-8">
+  <title>ex-dischi-musicali</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
+  <div id="root">
 
-    <!-- 2nd milestone
-    per la seconda milestone, index.html dovrà eseguire una chiamata ajax (meglio se con vuejs) verso app/server.php
+  <header>
+    <div class="container">
+      <img src="img/logo.png" alt="logo" />
+    </div>
+  </header>
 
-    -->
+  <select class="select-genre" v-model="genreSelect" @click="filterGenre()">
+    <option value="ALL">ALL</option>
+    <option v-for="element in genreList">{{element}}</option>
+  </select>
+
+  <div class="cds-container container" >
+    <!-- Disco ad esempio -->
+    <div class="cd" v-for="cd in diskList" v-if="cd.genre === genreSelect || genreSelect === 'ALL' ">
+      <img :src="cd.poster" alt="">
+      <h3>{{cd.title}}</h3>
+      <span class="author">{{cd.author}}</span>
+      <span class="year">{{cd.year}}</span>
+    </div>
+  </div>
+  </div>
 
 
+  <script src="js/main.js" charset="utf-8"></script>
 </body>
 </html>
+
+<!-- 2nd milestone
+  per la seconda milestone, index.html dovrà eseguire una chiamata ajax (meglio se con vuejs) verso app/server.php
+  -->

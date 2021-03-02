@@ -1,6 +1,6 @@
 <?php
 
-$dischi = [
+$dischi =[
   [
      "poster"=> "https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg",
      "title"=> "New Jersey",
@@ -70,5 +70,8 @@ $dischi = [
      "author"=> "Michael Jacjson",
      "genre"=> "Pop",
      "year"=> "1987"
- ]
+ ],
 ];
+
+$api = json_encode($dischi);
+echo $api;
