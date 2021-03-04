@@ -1,5 +1,8 @@
 <?php
 
+
+
+
 $dischi =[
   [
      "poster"=> "https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg",
@@ -73,5 +76,4 @@ $dischi =[
  ],
 ];
 
-$api = json_encode($dischi);
-echo $api;
+echo json_encode($dischi);
